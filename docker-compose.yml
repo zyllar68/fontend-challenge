@@ -1,0 +1,12 @@
+services:
+  react-app:
+    image: frontend-challenge
+    stdin_open: true
+    restart: always
+    command: npm start
+    ports:
+      - '3000:3000'
+    volumes:
+      - './:/app'
+    environment:
+      - CHOKIDAR_USEPOLLING=true
