@@ -1,12 +1,12 @@
-import { twMerge } from 'tailwind-merge';
-import PersonalizeSettings from './PersonalizeSettings';
-import PersonalizeCheckbox from './PersonalizeCheckbox';
+import { twMerge } from "tailwind-merge";
+import PersonalizeSettings from "./PersonalizeSettings";
+import PersonalizeCheckbox from "./PersonalizeCheckbox";
 
 function Header({ className }: { className: string }) {
   return (
-    <div className={twMerge('md:mb-0 md:flex md:justify-between', className)}>
+    <div className={twMerge("md:mb-0 md:flex md:justify-between", className)}>
       <h2>News</h2>
-      <div className="flex items-center">
+      <div className='flex items-center'>
         <PersonalizeSettings />
         <PersonalizeCheckbox />
       </div>

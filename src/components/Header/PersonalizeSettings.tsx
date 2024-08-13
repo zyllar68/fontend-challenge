@@ -1,13 +1,14 @@
-import { useState } from 'react';
+import { useState } from "react";
 
-import SettingsIcon from 'assets/SettingsIcon';
-import PersonalizeFormCard from './PersonalizeFormCard';
+import SettingsIcon from "assets/SettingsIcon";
+import PersonalizeFormCard from "./PersonalizeFormCard";
 
 function PersonalizeSettings() {
   const [showToast, setShowToast] = useState(false);
 
-  const handleToggleToast = () => {
-    setShowToast(!showToast);
+  const handleToggleToast = (key: string) => {
+    if (key === "card") setShowToast(!showToast);
+    else setShowToast(true);
   };
 
   const handleSubmit = () => {
@@ -15,14 +16,14 @@ function PersonalizeSettings() {
   };
 
   return (
-    <div className="relative">
+    <div className='relative'>
       <SettingsIcon
-        className="z-1 mr-3 cursor-pointer"
-        onClick={handleToggleToast}
+        className='z-1 mr-3 cursor-pointer'
+        onClick={() => handleToggleToast("settings")}
       />
       <PersonalizeFormCard
         show={showToast}
-        toggleShow={handleToggleToast}
+        toggleShow={() => handleToggleToast("card")}
         onSubmit={handleSubmit}
       />
     </div>
